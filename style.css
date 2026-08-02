@@ -1382,13 +1382,12 @@ img {
 }
 
 .input-group{
-    width:100%;
-    margin-bottom:20px;
+    margin-bottom:22px;
 }
 
 .input-group label{
     display:block;
-    margin-bottom:8px;
+    margin-bottom:10px;
     color:#e2e8f0;
     font-weight:600;
 }
@@ -1398,7 +1397,7 @@ img {
     display:flex;
     align-items:center;
     gap:12px;
-    padding:16px;
+    padding:16px 18px;
     border-radius:16px;
     background:#0f172a;
     border:1px solid rgba(255,255,255,.08);
