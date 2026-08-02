@@ -826,32 +826,60 @@
 
           <!-- Right Contact Form -->
 
-            <form action="https://formsubmit.co/piyushraj1267@gmail.com" method="POST">
-              <input type="text" name="name" placeholder="Your full name" required>
-  
-              <input type="email" name="email" placeholder="Your email" required>
-  
-              <input type="text" name="subject" placeholder="Subject" required>
-              
-              <textarea name="message" rows="6" placeholder="Write your message" required></textarea>
-            
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_subject" value="New Portfolio Contact Message">
-            
-              <button type="submit">Send Message</button>
-            </form>
+<div class="contact-form-col glass-panel">
+  <h3><i class="fa-solid fa-paper-plane"></i> Send a Message</h3>
+  <p>Feel free to reach out for internship opportunities, technical collaborations, or engineering inquiries.</p>
 
+  <form action="https://formsubmit.co/piyushraj1267@gmail.com" method="POST">
 
-              <button type="submit" class="btn btn-glow btn-full" id="submit-btn">
-                <span>Send Message</span> <i class="fa-solid fa-paper-plane"></i>
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+```
+<!-- FormSubmit Settings -->
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_subject" value="New Portfolio Contact Message">
+<input type="hidden" name="_next" value="https://piyushraj1267-lang.github.io/portfolio-website/thankyou.html">
+
+<div class="form-group">
+  <label>Your Name <span class="required">*</span></label>
+  <div class="input-wrapper">
+    <i class="fa-solid fa-user"></i>
+    <input type="text" name="name" placeholder="Enter your full name" required>
+  </div>
+</div>
+
+<div class="form-group">
+  <label>Your Email <span class="required">*</span></label>
+  <div class="input-wrapper">
+    <i class="fa-solid fa-envelope"></i>
+    <input type="email" name="email" placeholder="name@example.com" required>
+  </div>
+</div>
+
+<div class="form-group">
+  <label>Subject <span class="required">*</span></label>
+  <div class="input-wrapper">
+    <i class="fa-solid fa-heading"></i>
+    <input type="text" name="subject" placeholder="Project / Internship / Inquiry" required>
+  </div>
+</div>
+
+<div class="form-group">
+  <label>Message <span class="required">*</span></label>
+  <div class="input-wrapper textarea-wrapper">
+    <i class="fa-solid fa-comment-dots"></i>
+    <textarea name="message" rows="6" placeholder="Write your message here..." required></textarea>
+  </div>
+</div>
+
+<button type="submit" class="btn btn-glow btn-full">
+  <span>Send Message</span>
+  <i class="fa-solid fa-paper-plane"></i>
+</button>
+```
+
+  </form>
+</div>
+
 
   <!-- FOOTER -->
   <footer class="footer">
