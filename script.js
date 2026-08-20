@@ -271,106 +271,887 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     7. Project Case Study Modal Data & Triggers
-     ------------------------------------------------------------------------ */
-  const projectDetailsData = {
-    "1": {
-      title: "Smart Greenhouse Automation System",
-      category: "Smart Agriculture & IoT",
-      image: "assets/project1.jpg",
-      description: "Developed an automated smart greenhouse micro-climate and drip irrigation control system to monitor soil moisture, relative humidity, and ambient temperature in real time.",
-      technologies: ["Arduino C++", "DHT11 & Soil Sensors", "Relay Actuators", "LCD Display", "IoT Automation"],
-      outcomes: [
-        "Automated irrigation scheduling based on real-time soil moisture thresholds.",
-        "Reduced water consumption by 35% compared to manual flood irrigation.",
-        "Integrated climate ventilation control to prevent heat stress during peak afternoon hours."
-      ]
-    },
-    "2": {
-      title: "Automatic Lawn Mower",
-      category: "Agricultural Machinery & Power",
-      image: "assets/project2.jpg",
-      description: "Designed and fabricated a compact automatic electric lawn mower prototype tailored for small farm plots, orchards, and turf maintenance. Features a high-torque electric motor drive and durable rotary blade assembly.",
-      technologies: ["Mechanical Component Design", "DC Electric Motor Drive", "Chassis Fabrication", "Farm Machinery"],
-      outcomes: [
-        "Engineered lightweight tubular steel frame for maximum structural integrity.",
-        "Implemented high-velocity rotary cutting blade operating at 2800 RPM.",
-        "Demonstrated low operational noise, zero carbon emissions, and easy maintenance."
-      ]
-    },
-    "3": {
-      title: "Tractor Component Design & Assembly in CATIA V5",
-      category: "CAD & Product Design",
-      image: "assets/project3.jpg",
-      description: "Designed multi-part 3D mechanical components for heavy tractor transmission gearboxes, engine pistons, and hydraulic lift arms. Performed geometric constraint alignment, interference checks, and assembly modeling.",
-      technologies: ["CATIA V5 Part Design", "Assembly Workbench", "Generative Shape Design", "Kinematic Analysis"],
-      outcomes: [
-        "Created precise 3D CAD models following ISO/DIN mechanical drawing standards.",
-        "Executed clash analysis to eliminate component clearance overlaps in assembly.",
-        "Generated detailed 2D drafting production drawings with precise geometric tolerances."
-      ]
-    }
-  };
+/* ------------------------------------------------------------------------
+   7. PROJECT CASE STUDY MODAL DATA & TRIGGERS
+------------------------------------------------------------------------ */
 
-  const modal = document.getElementById('project-modal');
-  const modalBody = document.getElementById('modal-content-body');
-  const modalCloseBtn = document.getElementById('modal-close');
-  const openModalBtns = document.querySelectorAll('.open-modal-btn');
+const projectDetailsData = {
 
-  function openProjectModal(id) {
-    const data = projectDetailsData[id];
-    if (!data || !modal || !modalBody) return;
+  /* ================================================================
+     PROJECT 1 — SMART GREENHOUSE
+  ================================================================ */
 
-    modalBody.innerHTML = `
-      <div class="modal-header">
-        <span class="project-cat" style="position:static; margin-bottom: 0.5rem; display:inline-block;">${data.category}</span>
-        <h2 style="font-size: 1.8rem; font-weight:800; margin-bottom: 1rem;">${data.title}</h2>
+  "1": {
+
+    title: "Smart Greenhouse Automation System",
+
+    category: "Smart Agriculture & IoT",
+
+    images: [
+      "assets/project1.jpg",
+      "assets/project1-2.jpg",
+      "assets/project1-3.jpg",
+      "assets/project1-4.jpg",
+      "assets/project1-5.jpg"
+    ],
+
+    duration: "Academic Project",
+
+    status: "Prototype Developed",
+
+    description: `
+      Developed a smart greenhouse automation system for monitoring
+      and controlling important environmental conditions required for
+      healthy crop growth.
+
+      The system uses Arduino Mega 2560 as the main controller and
+      integrates temperature, humidity and soil-moisture sensors with
+      different actuators such as a water pump, exhaust fan, fogger
+      and solenoid valve.
+
+      The objective is to reduce manual intervention and improve
+      efficient use of water and other greenhouse resources.
+    `,
+
+    objectives: [
+
+      "Monitor soil moisture in real time.",
+
+      "Monitor greenhouse temperature and humidity.",
+
+      "Automate irrigation according to soil moisture conditions.",
+
+      "Control greenhouse ventilation using an exhaust fan.",
+
+      "Maintain suitable humidity conditions using a fogger.",
+
+      "Reduce manual intervention in greenhouse operation.",
+
+      "Improve water-use efficiency."
+    ],
+
+    components: [
+
+      "Arduino Mega 2560",
+
+      "Soil Moisture Sensor",
+
+      "DHT11 Temperature & Humidity Sensor",
+
+      "Water Pump",
+
+      "Exhaust Fan",
+
+      "Fogger",
+
+      "Solenoid Valve",
+
+      "Relay Module",
+
+      "LCD Display",
+
+      "Power Supply"
+    ],
+
+    technologies: [
+
+      "Arduino C++",
+
+      "Embedded Systems",
+
+      "IoT",
+
+      "Sensors & Actuators",
+
+      "Smart Agriculture",
+
+      "Automation"
+    ],
+
+    working: `
+      The sensors continuously collect information from the
+      greenhouse environment.
+
+      The soil moisture sensor measures the moisture level of the
+      growing medium, while the DHT11 sensor measures temperature
+      and relative humidity.
+
+      The Arduino Mega processes these sensor readings and compares
+      them with predefined threshold values.
+
+      When the soil moisture level falls below the required value,
+      the controller activates the water pump through a relay.
+
+      Similarly, the exhaust fan and fogger can be controlled
+      according to temperature and humidity conditions.
+
+      Therefore, the system provides an automated method of
+      monitoring and controlling greenhouse conditions.
+    `,
+
+    features: [
+
+      "Automatic irrigation",
+
+      "Soil moisture monitoring",
+
+      "Temperature monitoring",
+
+      "Humidity monitoring",
+
+      "Automatic ventilation",
+
+      "Fogging control",
+
+      "Sensor-based automation",
+
+      "Reduced manual intervention",
+
+      "Water-use management"
+    ],
+
+    contribution: `
+      My contribution included system planning, component selection,
+      Arduino programming, sensor integration, actuator interfacing,
+      circuit development, testing and understanding of the complete
+      greenhouse automation workflow.
+    `,
+
+    outcomes: [
+
+      "Successfully demonstrated sensor-based greenhouse monitoring.",
+
+      "Implemented automatic irrigation control based on soil moisture.",
+
+      "Integrated multiple sensors and actuators with Arduino Mega.",
+
+      "Demonstrated automatic control of greenhouse equipment.",
+
+      "Developed a prototype for smart and efficient greenhouse management."
+    ]
+
+  },
+
+
+  /* ================================================================
+     PROJECT 2 — AUTOMATIC LAWN MOWER
+  ================================================================ */
+
+  "2": {
+
+    title: "Automatic Lawn Mower",
+
+    category: "Agricultural Machinery & Power",
+
+    images: [
+      "assets/project2.jpg",
+      "assets/project2-2.jpg",
+      "assets/project2-3.jpg",
+      "assets/project2-4.jpg",
+      "assets/project2-5.jpg"
+    ],
+
+    duration: "Academic / Prototype Project",
+
+    status: "Prototype Developed",
+
+    description: `
+      Designed and fabricated a compact electric lawn mower prototype
+      for grass cutting applications.
+
+      The project focuses on developing a simple, low-cost and
+      electrically powered agricultural machinery system consisting
+      of a chassis, wheel drive system, cutting mechanism, electric
+      motors and control system.
+
+      The prototype was developed with the objective of reducing
+      manual effort involved in grass cutting and providing an
+      environmentally friendly alternative to conventional
+      fuel-powered equipment.
+    `,
+
+    objectives: [
+
+      "Develop a compact electric lawn mower prototype.",
+
+      "Reduce manual labour required for grass cutting.",
+
+      "Develop an electrically powered cutting mechanism.",
+
+      "Design a strong and lightweight chassis.",
+
+      "Provide suitable mobility for the mower.",
+
+      "Develop a reliable rotary cutting mechanism.",
+
+      "Improve ease of operation and maintenance."
+    ],
+
+    components: [
+
+      "Arduino Mega",
+
+      "Motor Driver",
+
+      "DC Gear Motors",
+
+      "BLDC Motor",
+
+      "BLDC ESC",
+
+      "FlySky FS-R6B Receiver",
+
+      "FlySky FS-CT6B Transmitter",
+
+      "Battery",
+
+      "Cutting Blade",
+
+      "Steel / Metal Chassis",
+
+      "Wheels",
+
+      "Switches and Wiring"
+    ],
+
+    technologies: [
+
+      "Mechanical Design",
+
+      "Electric Drive",
+
+      "Arduino",
+
+      "Motor Control",
+
+      "RC Control",
+
+      "Farm Machinery",
+
+      "Prototype Fabrication"
+    ],
+
+    working: `
+      The lawn mower uses electric motors for movement and a separate
+      motor for the grass-cutting mechanism.
+
+      The drive motors provide rotational power to the wheels,
+      allowing the machine to move forward, backward and turn.
+
+      A separate BLDC motor is connected to the cutting mechanism
+      through an electronic speed controller.
+
+      The cutting motor rotates the blade at high speed to cut grass.
+
+      The control system receives commands from the remote controller
+      and sends the required signals to the motor drivers and ESC.
+
+      This allows the operator to remotely control the movement and
+      cutting operation of the mower.
+    `,
+
+    features: [
+
+      "Electric-powered operation",
+
+      "Remote-controlled movement",
+
+      "Separate cutting motor",
+
+      "BLDC cutting mechanism",
+
+      "Motor driver-based wheel control",
+
+      "Compact chassis",
+
+      "Reduced fuel requirement",
+
+      "Low-emission operation",
+
+      "Easy maintenance"
+    ],
+
+    contribution: `
+      My contribution included mechanical layout planning, component
+      selection, motor and driver integration, chassis development,
+      wiring, control-system integration and testing of the prototype.
+    `,
+
+    outcomes: [
+
+      "Successfully developed a functional electric mower prototype.",
+
+      "Integrated wheel drive and cutting mechanisms.",
+
+      "Implemented remote control for machine movement.",
+
+      "Integrated BLDC motor and ESC for the cutting mechanism.",
+
+      "Demonstrated the feasibility of an electrically powered mower."
+    ]
+
+  },
+
+
+  /* ================================================================
+     PROJECT 3 — CATIA TRACTOR COMPONENT DESIGN
+  ================================================================ */
+
+  "3": {
+
+    title: "Tractor Component Design & Assembly using CATIA V5",
+
+    category: "CAD & Product Design",
+
+    images: [
+      "assets/project3.jpg",
+      "assets/project3-2.jpg",
+      "assets/project3-3.jpg",
+      "assets/project3-4.jpg",
+      "assets/project3-5.jpg"
+    ],
+
+    duration: "CAD Design Project",
+
+    status: "3D Models & Assemblies Completed",
+
+    description: `
+      Designed and developed multiple tractor and agricultural
+      machinery components using CATIA V5.
+
+      The project focused on creating accurate 3D mechanical models,
+      assemblies and engineering components used in tractor systems.
+
+      The work involved part modelling, assembly design,
+      dimensional control, geometric constraints and preparation
+      of engineering drawings.
+    `,
+
+    objectives: [
+
+      "Develop accurate 3D tractor component models.",
+
+      "Understand mechanical component design.",
+
+      "Create multi-part assemblies.",
+
+      "Apply appropriate geometric constraints.",
+
+      "Check component interference and clearances.",
+
+      "Develop engineering drawings.",
+
+      "Improve CAD modelling and product-design skills."
+    ],
+
+    components: [
+
+      "Left Lift Arm",
+
+      "Rear Lift Arm",
+
+      "Three-Point Hitch",
+
+      "Wheel Hub",
+
+      "Rim Hub",
+
+      "Stub Axle Spindle",
+
+      "Gearbox Cover",
+
+      "Clutch Box",
+
+      "Steering Components",
+
+      "Tractor Wheel Components"
+    ],
+
+    technologies: [
+
+      "CATIA V5",
+
+      "Part Design",
+
+      "Assembly Design",
+
+      "Generative Shape Design",
+
+      "Drafting",
+
+      "3D Modelling",
+
+      "Mechanical Component Design",
+
+      "Engineering Drawing"
+    ],
+
+    working: `
+      The design process begins with understanding the dimensions
+      and functional requirements of each mechanical component.
+
+      Individual components are created using CATIA V5 Part Design
+      using sketches, pads, pockets, shafts, holes, fillets and
+      chamfers.
+
+      After individual components are completed, they are imported
+      into Assembly Design.
+
+      Appropriate constraints are applied to position the components
+      correctly.
+
+      The final assembly is inspected for alignment, interference,
+      clearance and functional relationships between components.
+
+      Engineering drawings can then be generated for manufacturing
+      and documentation purposes.
+    `,
+
+    features: [
+
+      "3D part modelling",
+
+      "Assembly design",
+
+      "Geometric constraints",
+
+      "Component alignment",
+
+      "Interference checking",
+
+      "Mechanical component design",
+
+      "Engineering drawings",
+
+      "Dimensional accuracy",
+
+      "Product design"
+    ],
+
+    contribution: `
+      I worked on the complete CAD modelling workflow including
+      sketch creation, part modelling, feature development, assembly
+      constraints, component alignment, interference checking and
+      preparation of engineering drawings.
+    `,
+
+    outcomes: [
+
+      "Created multiple tractor component models in CATIA V5.",
+
+      "Developed multi-component tractor assemblies.",
+
+      "Improved understanding of mechanical design principles.",
+
+      "Performed assembly alignment and interference checking.",
+
+      "Developed engineering drawings for selected components.",
+
+      "Strengthened practical CAD and product-design skills."
+    ]
+
+  }
+
+};
+
+
+/* ================================================================
+   MODAL ELEMENTS
+================================================================ */
+
+const modal = document.getElementById("project-modal");
+
+const modalBody =
+  document.getElementById("modal-content-body");
+
+const modalCloseBtn =
+  document.getElementById("modal-close");
+
+const openModalBtns =
+  document.querySelectorAll(".open-modal-btn");
+
+
+/* ================================================================
+   OPEN PROJECT MODAL
+================================================================ */
+
+function openProjectModal(id) {
+
+  const data = projectDetailsData[id];
+
+  if (!data || !modal || !modalBody) return;
+
+
+  modalBody.innerHTML = `
+
+    <!-- =========================================
+         PROJECT HEADER
+    ========================================== -->
+
+    <div class="modal-header">
+
+      <span
+        class="project-cat"
+        style="
+          position: static;
+          display: inline-block;
+          margin-bottom: 0.7rem;
+        "
+      >
+        ${data.category}
+      </span>
+
+      <h2>
+        ${data.title}
+      </h2>
+
+      <div class="modal-meta">
+
+        <span>
+          <i class="fa-solid fa-calendar"></i>
+          ${data.duration}
+        </span>
+
+        <span>
+          <i class="fa-solid fa-circle-check"></i>
+          ${data.status}
+        </span>
+
       </div>
-      <img src="${data.image}" alt="${data.title}" style="width: 100%; max-height: 350px; object-fit: cover; border-radius: var(--radius-md); margin-bottom: 1.5rem; border: 1px solid var(--border-glass);">
-      
-      <h3 style="font-size: 1.15rem; color: var(--secondary-accent); margin-bottom: 0.5rem;"><i class="fa-solid fa-file-text"></i> Project Overview</h3>
-      <p style="color: var(--text-sub); font-size: 0.98rem; margin-bottom: 1.5rem; line-height: 1.6;">${data.description}</p>
-      
-      <h3 style="font-size: 1.15rem; color: var(--secondary-accent); margin-bottom: 0.5rem;"><i class="fa-solid fa-code"></i> Technologies & Tools</h3>
-      <div class="tech-tags" style="margin-bottom: 1.5rem;">
-        ${data.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
-      </div>
 
-      <h3 style="font-size: 1.15rem; color: var(--secondary-accent); margin-bottom: 0.5rem;"><i class="fa-solid fa-circle-check"></i> Key Engineering Outcomes</h3>
-      <ul class="resp-list" style="margin-bottom: 1.5rem;">
-        ${data.outcomes.map(o => `<li><i class="fa-solid fa-angle-right"></i> ${o}</li>`).join('')}
+    </div>
+
+
+    <!-- =========================================
+         IMAGE GALLERY
+    ========================================== -->
+
+    <div class="project-modal-gallery">
+
+      ${data.images.map((image, index) => `
+
+        <div class="modal-gallery-item">
+
+          <img
+            src="${image}"
+            alt="${data.title} - Project Image ${index + 1}"
+            loading="lazy"
+          >
+
+        </div>
+
+      `).join("")}
+
+    </div>
+
+
+    <!-- =========================================
+         PROJECT OVERVIEW
+    ========================================== -->
+
+    <div class="modal-section">
+
+      <h3>
+        <i class="fa-solid fa-file-lines"></i>
+        Project Overview
+      </h3>
+
+      <p>
+        ${data.description}
+      </p>
+
+    </div>
+
+
+    <!-- =========================================
+         OBJECTIVES
+    ========================================== -->
+
+    <div class="modal-section">
+
+      <h3>
+        <i class="fa-solid fa-bullseye"></i>
+        Project Objectives
+      </h3>
+
+      <ul class="modal-list">
+
+        ${data.objectives.map(item => `
+
+          <li>
+
+            <i class="fa-solid fa-check"></i>
+
+            <span>${item}</span>
+
+          </li>
+
+        `).join("")}
+
       </ul>
-    `;
 
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
+    </div>
 
-  function closeProjectModal() {
-    if (!modal) return;
-    modal.classList.remove('active');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-  }
 
-  openModalBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const pId = btn.getAttribute('data-project');
-      if (pId) openProjectModal(pId);
-    });
-  });
+    <!-- =========================================
+         COMPONENTS
+    ========================================== -->
 
-  modalCloseBtn?.addEventListener('click', closeProjectModal);
-  modal?.addEventListener('click', (e) => {
-    if (e.target === modal) closeProjectModal();
-  });
+    <div class="modal-section">
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal?.classList.contains('active')) {
-      closeProjectModal();
+      <h3>
+        <i class="fa-solid fa-microchip"></i>
+        Components / Equipment Used
+      </h3>
+
+      <div class="modal-tags">
+
+        ${data.components.map(component => `
+
+          <span>
+            ${component}
+          </span>
+
+        `).join("")}
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================
+         TECHNOLOGIES
+    ========================================== -->
+
+    <div class="modal-section">
+
+      <h3>
+        <i class="fa-solid fa-code"></i>
+        Technologies & Tools
+      </h3>
+
+      <div class="modal-tags">
+
+        ${data.technologies.map(technology => `
+
+          <span>
+            ${technology}
+          </span>
+
+        `).join("")}
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================
+         WORKING PRINCIPLE
+    ========================================== -->
+
+    <div class="modal-section">
+
+      <h3>
+        <i class="fa-solid fa-gears"></i>
+        Working Principle
+      </h3>
+
+      <p>
+        ${data.working}
+      </p>
+
+    </div>
+
+
+    <!-- =========================================
+         KEY FEATURES
+    ========================================== -->
+
+    <div class="modal-section">
+
+      <h3>
+        <i class="fa-solid fa-star"></i>
+        Key Features
+      </h3>
+
+      <div class="modal-feature-grid">
+
+        ${data.features.map(feature => `
+
+          <div class="modal-feature">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            <span>
+              ${feature}
+            </span>
+
+          </div>
+
+        `).join("")}
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================================
+         MY CONTRIBUTION
+    ========================================== -->
+
+    <div class="modal-section">
+
+      <h3>
+        <i class="fa-solid fa-user-gear"></i>
+        My Contribution
+      </h3>
+
+      <p>
+        ${data.contribution}
+      </p>
+
+    </div>
+
+
+    <!-- =========================================
+         OUTCOMES
+    ========================================== -->
+
+    <div class="modal-section">
+
+      <h3>
+        <i class="fa-solid fa-chart-line"></i>
+        Key Engineering Outcomes
+      </h3>
+
+      <ul class="modal-list">
+
+        ${data.outcomes.map(outcome => `
+
+          <li>
+
+            <i class="fa-solid fa-angle-right"></i>
+
+            <span>
+              ${outcome}
+            </span>
+
+          </li>
+
+        `).join("")}
+
+      </ul>
+
+    </div>
+
+  `;
+
+
+  /* Open modal */
+
+  modal.classList.add("active");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+  document.body.style.overflow = "hidden";
+
+}
+
+
+/* ================================================================
+   CLOSE PROJECT MODAL
+================================================================ */
+
+function closeProjectModal() {
+
+  if (!modal) return;
+
+  modal.classList.remove("active");
+
+  modal.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+  document.body.style.overflow = "";
+
+}
+
+
+/* ================================================================
+   PROJECT BUTTON EVENTS
+================================================================ */
+
+openModalBtns.forEach(btn => {
+
+  btn.addEventListener("click", function(e) {
+
+    e.preventDefault();
+
+    const projectId =
+      this.getAttribute("data-project");
+
+    if (projectId) {
+
+      openProjectModal(projectId);
+
     }
+
   });
+
+});
+
+
+/* ================================================================
+   CLOSE BUTTON
+================================================================ */
+
+modalCloseBtn?.addEventListener(
+  "click",
+  closeProjectModal
+);
+
+
+/* ================================================================
+   CLICK OUTSIDE MODAL
+================================================================ */
+
+modal?.addEventListener(
+  "click",
+  function(e) {
+
+    if (e.target === modal) {
+
+      closeProjectModal();
+
+    }
+
+  }
+);
+
+
+/* ================================================================
+   ESCAPE KEY
+================================================================ */
+
+document.addEventListener(
+  "keydown",
+  function(e) {
+
+    if (
+      e.key === "Escape" &&
+      modal?.classList.contains("active")
+    ) {
+
+      closeProjectModal();
+
+    }
+
+  }
+);
 
   /* ------------------------------------------------------------------------
      8. Contact Form Client-Side Validation & Feedback
