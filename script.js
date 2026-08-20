@@ -273,199 +273,35 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------------
 /* ------------------------------------------------------------------------
   /* =========================================================
-   PROJECT CASE STUDY MODAL
-========================================================= */
+<!-- PROJECT DETAILS MODAL -->
+<div
+  id="project-modal"
+  class="modal-overlay"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+>
 
-.case-study {
-  width: 100%;
-}
+  <div class="modal-container glass-panel">
 
-.modal-header {
-  margin-bottom: 1.5rem;
-}
+    <button
+      class="modal-close"
+      id="modal-close"
+      aria-label="Close modal"
+    >
+      &times;
+    </button>
 
-.modal-header h2 {
-  font-size: 2rem;
-  line-height: 1.25;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-}
+    <div
+      class="modal-content"
+      id="modal-content-body"
+    >
+      <!-- Dynamic project content will appear here -->
+    </div>
 
+  </div>
 
-/* =========================================================
-   PROJECT IMAGE GALLERY
-========================================================= */
-
-.case-study-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-bottom: 2rem;
-}
-
-.case-study-image {
-  width: 100%;
-  height: 230px;
-  overflow: hidden;
-  border-radius: 14px;
-  border: 1px solid var(--border-glass);
-  background: rgba(255,255,255,0.03);
-}
-
-.case-study-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.case-study-image:hover img {
-  transform: scale(1.05);
-}
-
-
-/* =========================================================
-   CASE STUDY SECTIONS
-========================================================= */
-
-.case-study-section {
-  margin-bottom: 2rem;
-}
-
-.case-study-section h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  font-size: 1.15rem;
-
-  color: var(--secondary-accent);
-
-  margin-bottom: 0.8rem;
-}
-
-.case-study-section h3 i {
-  font-size: 1rem;
-}
-
-.case-study-section p {
-  color: var(--text-sub);
-  line-height: 1.7;
-  font-size: 0.97rem;
-}
-
-
-/* =========================================================
-   CASE STUDY LIST
-========================================================= */
-
-.case-study-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.case-study-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-
-  color: var(--text-sub);
-
-  line-height: 1.6;
-
-  margin-bottom: 10px;
-}
-
-.case-study-list li i {
-  color: var(--secondary-accent);
-  margin-top: 5px;
-  min-width: 16px;
-}
-
-
-/* =========================================================
-   TECHNOLOGY TAGS
-========================================================= */
-
-.case-study .tech-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.case-study .tech-tag {
-  padding: 7px 12px;
-
-  border-radius: 20px;
-
-  font-size: 0.82rem;
-
-  background: rgba(255,255,255,0.05);
-
-  border: 1px solid var(--border-glass);
-
-  color: var(--text-main);
-
-  transition: all 0.3s ease;
-}
-
-.case-study .tech-tag:hover {
-  transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   MODAL CATEGORY
-========================================================= */
-
-.modal-category {
-  position: static !important;
-  display: inline-block !important;
-
-  margin-bottom: 0.5rem;
-}
-
-
-/* =========================================================
-   MOBILE RESPONSIVE
-========================================================= */
-
-@media (max-width: 768px) {
-
-  .case-study-gallery {
-    grid-template-columns: 1fr;
-  }
-
-  .case-study-image {
-    height: 220px;
-  }
-
-  .modal-header h2 {
-    font-size: 1.5rem;
-  }
-
-}
-
-
-@media (max-width: 480px) {
-
-  .case-study-image {
-    height: 190px;
-  }
-
-  .case-study-section h3 {
-    font-size: 1rem;
-  }
-
-  .case-study-section p,
-  .case-study-list li {
-    font-size: 0.9rem;
-  }
-
-}
-
+</div>
   /* ------------------------------------------------------------------------
      8. Contact Form Client-Side Validation & Feedback
      ------------------------------------------------------------------------ */
