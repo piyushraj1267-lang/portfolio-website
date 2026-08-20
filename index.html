@@ -555,96 +555,452 @@
       </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-subtitle">Engineering Innovations</span>
-          <h2 class="section-title">Featured Projects</h2>
-          <div class="title-underline"></div>
-        </div>
+    // =====================================================
+// PROJECT DETAILS DATABASE
+// =====================================================
 
-        <div class="projects-grid">
-          <!-- Project 1 -->
-          <div class="project-card glass-panel" data-project="1">
-            <div class="project-img-wrapper">
-              <img src="project1.jpg" alt="Smart Greenhouse Automation System">
-              <div class="project-overlay">
-                <button class="btn btn-sm btn-glow open-modal-btn" data-project="1">
-                  <i class="fa-solid fa-eye"></i> View Details
-                </button>
-              </div>
-              <span class="project-cat">Smart Agriculture & IoT</span>
-            </div>
-            <div class="project-body">
-              <h3>Smart Greenhouse Automation System</h3>
-              <p>Developed an automated smart greenhouse climate & irrigation monitoring system using Arduino microcontrollers and sensors to ensure optimal crop yield.</p>
-              <div class="tech-tags">
-                <span class="tech-tag">Arduino</span>
-                <span class="tech-tag">IoT</span>
-                <span class="tech-tag">Sensors</span>
-                <span class="tech-tag">Automation</span>
-              </div>
-              <div class="project-footer">
-                <button class="btn-text open-modal-btn" data-project="1">Read Case Study <i class="fa-solid fa-arrow-right"></i></button>
-              </div>
-            </div>
-          </div>
+const projectData = {
 
-          <!-- Project 2 -->
-          <div class="project-card glass-panel" data-project="2">
-            <div class="project-img-wrapper">
-              <img src="project2.jpg" alt="Automatic Lawn Mower">
-              <div class="project-overlay">
-                <button class="btn btn-sm btn-glow open-modal-btn" data-project="2">
-                  <i class="fa-solid fa-eye"></i> View Details
-                </button>
-              </div>
-              <span class="project-cat">Agricultural Machinery</span>
-            </div>
-            <div class="project-body">
-              <h3>Automatic Lawn Mower</h3>
-              <p>Designed and fabricated a prototype automatic lawn mower equipped with a DC electric motor drive system, cutting blade mechanism, and rugged chassis.</p>
-              <div class="tech-tags">
-                <span class="tech-tag">Mechanical Design</span>
-                <span class="tech-tag">Electric Drive</span>
-                <span class="tech-tag">Farm Machinery</span>
-                <span class="tech-tag">Prototyping</span>
-              </div>
-              <div class="project-footer">
-                <button class="btn-text open-modal-btn" data-project="2">Read Case Study <i class="fa-solid fa-arrow-right"></i></button>
-              </div>
-            </div>
-          </div>
+    1: {
+        title: "Smart Greenhouse Automation System",
+        category: "Smart Agriculture & IoT",
+        mainImage: "project1.jpg",
 
-          <!-- Project 3 -->
-          <div class="project-card glass-panel" data-project="3">
-            <div class="project-img-wrapper">
-              <img src="project3.jpg" alt="Tractor Component Design & Assembly in CATIA V5">
-              <div class="project-overlay">
-                <button class="btn btn-sm btn-glow open-modal-btn" data-project="3">
-                  <i class="fa-solid fa-eye"></i> View Details
-                </button>
-              </div>
-              <span class="project-cat">CAD & Product Design</span>
+        images: [
+            "project1.jpg",
+            "greenhouse1.jpg",
+            "greenhouse2.jpg",
+            "greenhouse3.jpg"
+        ],
+
+        shortDescription:
+            "An Arduino-based smart greenhouse automation system designed to monitor and control important environmental parameters for improved crop growth.",
+
+        overview:
+            "The Smart Greenhouse Automation System is an IoT-based agricultural automation project developed to maintain suitable environmental conditions inside a greenhouse. The system monitors soil moisture and environmental conditions and automatically controls irrigation and ventilation equipment.",
+
+        objectives: [
+            "Automate greenhouse irrigation.",
+            "Monitor soil moisture and environmental conditions.",
+            "Reduce unnecessary water consumption.",
+            "Maintain suitable conditions for crop growth.",
+            "Reduce manual monitoring and intervention."
+        ],
+
+        components: [
+            "Arduino Mega 2560",
+            "Soil Moisture Sensor",
+            "DHT11 Temperature & Humidity Sensor",
+            "Water Pump",
+            "Solenoid Valve",
+            "Exhaust Fan",
+            "Fogger",
+            "Relay Module",
+            "Power Supply"
+        ],
+
+        working:
+            "The sensors continuously monitor the greenhouse environment. When soil moisture falls below the predefined threshold, the Arduino activates the water pump through a relay. Environmental conditions are also monitored and the exhaust fan or fogging system can be activated when required.",
+
+        technologies: [
+            "Arduino",
+            "IoT",
+            "Sensors",
+            "Automation",
+            "Embedded Systems",
+            "Smart Agriculture"
+        ],
+
+        role:
+            "Designed the automation concept, selected sensors and actuators, developed the control logic, assembled the prototype, and tested the automated irrigation and environmental-control functions.",
+
+        outcome:
+            "The prototype demonstrated how sensor-based automation can reduce manual intervention and improve irrigation management in protected cultivation."
+    },
+
+
+    2: {
+        title: "Automatic Lawn Mower",
+        category: "Agricultural Machinery",
+        mainImage: "project2.jpg",
+
+        images: [
+            "project2.jpg",
+            "mower1.jpg",
+            "mower2.jpg",
+            "mower3.jpg"
+        ],
+
+        shortDescription:
+            "A battery-powered lawn mower prototype developed with an electric drive system, cutting mechanism, chassis and remote-control functionality.",
+
+        overview:
+            "The Automatic Lawn Mower project focuses on developing a compact agricultural machinery prototype capable of moving using electrically powered wheels while operating a separate grass-cutting mechanism.",
+
+        objectives: [
+            "Develop a compact electric lawn mower.",
+            "Reduce manual grass-cutting effort.",
+            "Use an electric drive system.",
+            "Develop independent wheel and cutting systems.",
+            "Create a practical agricultural machinery prototype."
+        ],
+
+        components: [
+            "Arduino Mega",
+            "Motor Driver",
+            "DC Gear Motors",
+            "BLDC Motor",
+            "BLDC ESC",
+            "FlySky FS-R6B Receiver",
+            "FlySky FS-CT6B Transmitter",
+            "Battery",
+            "Cutting Blade",
+            "Mechanical Chassis",
+            "Wheels"
+        ],
+
+        working:
+            "The control system receives commands from the RC transmitter through the receiver. The Arduino processes the control signals and operates the motor driver for movement. A separate BLDC motor and ESC are used for the cutting mechanism.",
+
+        technologies: [
+            "Arduino",
+            "RC Control",
+            "Electric Drive",
+            "Motor Control",
+            "Mechanical Design",
+            "Agricultural Machinery"
+        ],
+
+        role:
+            "Worked on the mechanical concept, motor selection, control-system integration, motor-driver connections, RC control system and overall prototype development.",
+
+        outcome:
+            "The project demonstrated the feasibility of an electrically powered remotely controlled grass-cutting machine for small-scale agricultural and landscaping applications."
+    },
+
+
+    3: {
+        title: "Tractor Component Design & Assembly using CATIA V5",
+        category: "CAD & Product Design",
+        mainImage: "project3.jpg",
+
+        images: [
+            "project3.jpg",
+            "catia1.jpg",
+            "catia2.jpg",
+            "catia3.jpg",
+            "catia4.jpg"
+        ],
+
+        shortDescription:
+            "3D modelling and assembly of tractor components using CATIA V5 with focus on mechanical design and agricultural machinery applications.",
+
+        overview:
+            "This project focuses on the computer-aided design of tractor components and mechanical assemblies using CATIA V5. The work involved creating individual parts, applying engineering features and developing assemblies to understand component relationships.",
+
+        objectives: [
+            "Develop 3D tractor component models.",
+            "Understand mechanical component geometry.",
+            "Create accurate part models.",
+            "Develop assembly models.",
+            "Improve CAD-based product design skills."
+        ],
+
+        components: [
+            "Left Lift Arm",
+            "Rear Lift Arm",
+            "3-Point Hitch",
+            "Wheel Hub",
+            "Rim Hub",
+            "Steering Components",
+            "Gearbox Cover",
+            "Clutch Box",
+            "Stub Axle Spindle"
+        ],
+
+        working:
+            "Individual tractor components were modelled using CATIA V5 Part Design. Features such as sketches, pads, pockets, shafts, holes, fillets and chamfers were used to create the components. The parts were then assembled using Assembly Design techniques.",
+
+        technologies: [
+            "CATIA V5",
+            "Part Design",
+            "Assembly Design",
+            "3D Modelling",
+            "Mechanical Design",
+            "Product Development"
+        ],
+
+        role:
+            "Created individual tractor component models, developed assemblies, applied mechanical design features, checked component relationships and prepared 3D CAD models.",
+
+        outcome:
+            "The project strengthened practical skills in CATIA V5, mechanical component modelling, assembly design and tractor-oriented product development."
+    }
+
+};
+
+
+// =====================================================
+// PROJECT MODAL
+// =====================================================
+
+const modal = document.getElementById("project-modal");
+const modalContent = document.getElementById("modal-content-body");
+const modalClose = document.getElementById("modal-close");
+
+
+// Open project modal
+document.querySelectorAll(".open-modal-btn").forEach(button => {
+
+    button.addEventListener("click", function () {
+
+        const projectId = this.dataset.project;
+        const project = projectData[projectId];
+
+        if (!project) return;
+
+        modalContent.innerHTML = `
+
+            <div class="project-detail">
+
+                <!-- PROJECT HEADER -->
+                <div class="project-detail-header">
+
+                    <span class="project-detail-category">
+                        ${project.category}
+                    </span>
+
+                    <h2>${project.title}</h2>
+
+                    <p class="project-detail-short">
+                        ${project.shortDescription}
+                    </p>
+
+                </div>
+
+
+                <!-- IMAGE GALLERY -->
+                <div class="project-gallery">
+
+                    ${project.images.map((image, index) => `
+                        
+                        <div class="gallery-image ${index === 0 ? "gallery-main" : ""}">
+                            <img
+                                src="${image}"
+                                alt="${project.title} image ${index + 1}"
+                                onclick="openImageViewer('${image}')"
+                            >
+                        </div>
+
+                    `).join("")}
+
+                </div>
+
+
+                <!-- OVERVIEW -->
+                <div class="project-detail-section">
+
+                    <h3>
+                        <i class="fa-solid fa-circle-info"></i>
+                        Project Overview
+                    </h3>
+
+                    <p>
+                        ${project.overview}
+                    </p>
+
+                </div>
+
+
+                <!-- OBJECTIVES -->
+                <div class="project-detail-section">
+
+                    <h3>
+                        <i class="fa-solid fa-bullseye"></i>
+                        Objectives
+                    </h3>
+
+                    <ul class="detail-list">
+
+                        ${project.objectives.map(item => `
+                            <li>
+                                <i class="fa-solid fa-check"></i>
+                                ${item}
+                            </li>
+                        `).join("")}
+
+                    </ul>
+
+                </div>
+
+
+                <!-- COMPONENTS -->
+                <div class="project-detail-section">
+
+                    <h3>
+                        <i class="fa-solid fa-microchip"></i>
+                        Components / Equipment
+                    </h3>
+
+                    <div class="detail-tags">
+
+                        ${project.components.map(item => `
+                            <span>${item}</span>
+                        `).join("")}
+
+                    </div>
+
+                </div>
+
+
+                <!-- WORKING -->
+                <div class="project-detail-section">
+
+                    <h3>
+                        <i class="fa-solid fa-gears"></i>
+                        Working Principle
+                    </h3>
+
+                    <p>
+                        ${project.working}
+                    </p>
+
+                </div>
+
+
+                <!-- TECHNOLOGIES -->
+                <div class="project-detail-section">
+
+                    <h3>
+                        <i class="fa-solid fa-code"></i>
+                        Technologies Used
+                    </h3>
+
+                    <div class="detail-tags">
+
+                        ${project.technologies.map(item => `
+                            <span>${item}</span>
+                        `).join("")}
+
+                    </div>
+
+                </div>
+
+
+                <!-- MY ROLE -->
+                <div class="project-detail-section">
+
+                    <h3>
+                        <i class="fa-solid fa-user-gear"></i>
+                        My Role
+                    </h3>
+
+                    <p>
+                        ${project.role}
+                    </p>
+
+                </div>
+
+
+                <!-- OUTCOME -->
+                <div class="project-detail-section project-outcome">
+
+                    <h3>
+                        <i class="fa-solid fa-trophy"></i>
+                        Project Outcome
+                    </h3>
+
+                    <p>
+                        ${project.outcome}
+                    </p>
+
+                </div>
+
             </div>
-            <div class="project-body">
-              <h3>Tractor Component Design & Assembly using CATIA V5</h3>
-              <p>Designed complex tractor transmission gear parts and engine components in CATIA V5. Created full 3D assembly models focusing on part tolerances and kinematics.</p>
-              <div class="tech-tags">
-                <span class="tech-tag">CATIA V5</span>
-                <span class="tech-tag">Part Design</span>
-                <span class="tech-tag">Assembly Design</span>
-                <span class="tech-tag">3D Modelling</span>
-              </div>
-              <div class="project-footer">
-                <button class="btn-text open-modal-btn" data-project="3">Read Case Study <i class="fa-solid fa-arrow-right"></i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
+        `;
+
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+
+    });
+
+});
+
+
+// =====================================================
+// CLOSE MODAL
+// =====================================================
+
+function closeProjectModal() {
+
+    modal.classList.remove("active");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("modal-open");
+
+}
+
+
+modalClose.addEventListener("click", closeProjectModal);
+
+
+// Close when clicking outside modal
+modal.addEventListener("click", function (event) {
+
+    if (event.target === modal) {
+        closeProjectModal();
+    }
+
+});
+
+
+// Close with ESC key
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+        closeProjectModal();
+    }
+
+});
+
+
+// =====================================================
+// FULL IMAGE VIEWER
+// =====================================================
+
+function openImageViewer(image) {
+
+    const viewer = document.createElement("div");
+
+    viewer.className = "image-viewer";
+
+    viewer.innerHTML = `
+
+        <button class="image-viewer-close">
+            &times;
+        </button>
+
+        <img src="${image}" alt="Project image">
+
+    `;
+
+    document.body.appendChild(viewer);
+
+    viewer.querySelector(".image-viewer-close")
+        .addEventListener("click", function () {
+            viewer.remove();
+        });
+
+    viewer.addEventListener("click", function (event) {
+
+        if (event.target === viewer) {
+            viewer.remove();
+        }
+
+    });
+
+}
 
     <!-- ACHIEVEMENTS & LEADERSHIP SECTION -->
     <section id="achievements" class="section bg-alt">
